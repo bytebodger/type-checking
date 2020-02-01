@@ -9,7 +9,7 @@ All of the code is in `is.js`.  Because you can never theoretically know exactly
 
 It contains a series of simple Boolean checks to determine whether a value is of a given type.  These are then used as such (example shown is in React - but the same could be done in "regular" JavaScript):
 
-    import is from '../utilities/is';
+    import is from './is';
     import React from 'react';
     
     export default class Foo extends React.Component {
