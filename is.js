@@ -4,7 +4,7 @@ class booleanValidation {
    }
    
    aGuid(value) {
-      if (!this.aPopulatedString(value)) { return false; }
+      if (!this.aPopulatedString(value)) return false;
       if (value.length !== 32) { return false; }
       for (let i = 0; i < 32; i++) {
          const characterCode = value.charCodeAt(i);
@@ -38,12 +38,12 @@ class booleanValidation {
    }
    
    aPopulatedArray(value) {
-      if (!Array.isArray(value)) { return false; }
+      if (!Array.isArray(value)) return false;
       return !!value.length;
    }
    
    aPopulatedObject(value) {
-      if (this.nullOrUndefined(value)) { return false; }
+      if (this.nullOrUndefined(value)) return false;
       return (typeof value === 'object' && !Array.isArray(value) && Object.keys(value).length > 0);
    }
    
@@ -61,6 +61,12 @@ class booleanValidation {
    
    nullOrUndefined(variable) {
       return (variable === undefined || variable === null);
+      return
+   }
+   
+   oneOfStrings(variable, oneOf = []) {
+      if (!this.aPopulatedString(variable) || !this.aPopulatedArray(oneOf)) return false;
+      return oneOf.some(acceptableValue => acceptableValue === variable);
    }
    
    undefined(variable) {
