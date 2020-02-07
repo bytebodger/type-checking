@@ -61,7 +61,6 @@ class booleanValidation {
    
    nullOrUndefined(variable) {
       return (variable === undefined || variable === null);
-      return
    }
    
    oneOfStrings(variable, oneOf = []) {
