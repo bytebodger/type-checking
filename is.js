@@ -26,7 +26,7 @@ class booleanValidation {
       console.error(value, 'is not an object');
    };
    
-   aNonNegativeInteger = (value = {}) => {
+   aNonNegativeInteger = (value = -1) => {
       return this.anInteger(value) && value >= 0;
    };
    
@@ -62,7 +62,7 @@ class booleanValidation {
       return false;
    };
    
-   aPositiveInteger = (value = {}) => {
+   aPositiveInteger = (value = -1) => {
       return this.anInteger(value) && value > 0;
    };
    
